@@ -28,7 +28,7 @@ public class AppiumConfig {
         capabilities.setCapability("appPackage", "com.sheygam.contactapp");
         capabilities.setCapability("appActivity", ".SplashActivity");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
-        capabilities.setCapability(MobileCapabilityType.APP, "/home/olegsher/workspace/Mobile22/src/contacts-android.apk");
+//        capabilities.setCapability(MobileCapabilityType.APP, "/home/olegsher/workspace/Mobile22/src/contacts-android.apk");
         try {
             driver = new AppiumDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {

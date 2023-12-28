@@ -19,4 +19,15 @@ public class SplashPage extends BasePage {
 
 
 
+// TODO
+/*
+Add method to goToAuthPage should return object of AuthenticationPage
+ */
+    public AuthenticationPage goToAuthPage() throws InterruptedException {
+//        TODO fix sleep
+        Thread.sleep(5000);
+        return new AuthenticationPage(driver);
+    }
+
+
 }
