@@ -72,11 +72,12 @@ public class AuthenticationPage extends BasePage {
         return fillEmail(user.getEmail()).fillPassword(user.getPassword()).clickRegBtn();
     }
 
-    public boolean validateErrorTitleAlertCorrect(){
+
+
+    public boolean validateErrorTitleAlertCorrect() {
+        pause(5000);
         return isTextEqual(titleErrorTextAlert, "Error");
     }
-
-
 
 
 

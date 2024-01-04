@@ -28,6 +28,14 @@ public class BasePage {
         driver.hideKeyboard();
     }
 
+    public void pause(long mill) {
+        try {
+            Thread.sleep(mill);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     }
 
 

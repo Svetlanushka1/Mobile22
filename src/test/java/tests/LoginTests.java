@@ -18,8 +18,8 @@ public class LoginTests extends AppiumConfig {
     boolean flagIsUserLogin = false;
     boolean flagIsPopUpErrorDisplays = false;
 
-    @Test
-    public void positiveLogin() throws InterruptedException {
+    @Test()
+    public void positiveLogin()  {
         flagIsUserLogin = true;
         Assert.assertTrue(new SplashPage(driver).goToAuthPage().
                 login(UserDTO.builder()
@@ -33,29 +33,21 @@ public class LoginTests extends AppiumConfig {
  */
      }
 
-     @Test
-    public void negativeLoginEmptyEmail()  {
-// TODO fix validateErrorTitleAlertCorrect
-//        flagIsUserLogin = true;
-//        Assert.assertTrue(new SplashPage(driver).goToAuthPage().
-//                login(UserDTO.builder()
-//                        .email("testqa20@gmail.com")
-//                        .password("123456Aaa$")
-//                        .build())
-//                .validateErrorTitleAlertCorrect());
-    /* goto splash page
-    wait and goto Authentication page
-    validate if authentication is opened */
 
-     }
+    @Test()
+    public void negativeLoginEmptyEmail() {
+        flagIsPopUpErrorDisplays = true;
+        Assert.assertTrue(new SplashPage(driver).goToAuthPage().fillPassword("123456Aa$")
+                .clickLoginBtnNegative().validateErrorTitleAlertCorrect());
+    }
 
 
      @AfterMethod
-
-        /*
-        if logged in => so we in ContactListPage and logout
-        if ErrorAlert => so we need to press AlertBtn
-         */
+//
+//        /*
+//        if logged in => so we in ContactListPage and logout
+//        if ErrorAlert => so we need to press AlertBtn
+//         */
     public void afterMethod() {
         if(flagIsUserLogin) {
             flagIsUserLogin = false;
