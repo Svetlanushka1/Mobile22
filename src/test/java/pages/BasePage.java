@@ -22,6 +22,7 @@ public class BasePage {
     }
 
     public void typeTextBase(MobileElement el, String text){
+        pause(2000);
         el.click();
         el.clear();
         el.sendKeys(text);
